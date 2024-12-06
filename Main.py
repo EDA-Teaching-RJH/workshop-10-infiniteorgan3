@@ -12,7 +12,7 @@ def main():
 
     print(coursea)
 
-    print(student1.degree())
+    print(student1.degree)
 
     student2.degree("ECE")
 
