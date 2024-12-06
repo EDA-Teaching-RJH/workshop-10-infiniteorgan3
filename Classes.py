@@ -21,7 +21,7 @@ class Student:
     def degree(self, degree):
         if degree not in ["ECE", "BIO", "MECH", "EEE"]:
             raise ValueError("Invalid degree input.")
-        self.degree = degree
+        self._degree = degree
 
 class Course:
     def __init__(self, coursename, coursecode, enrolledstudents, strenrolled):

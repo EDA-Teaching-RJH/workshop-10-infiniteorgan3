@@ -15,3 +15,6 @@ def main():
     print(student1.degree())
 
     student2.degree("ECE")
+
+if __name__ == "__main__":
+    main()
