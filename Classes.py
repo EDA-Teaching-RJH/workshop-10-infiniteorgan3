@@ -24,7 +24,7 @@ class Student:
         self._degree = degree
 
 class Course:
-    def __init__(self, coursename, coursecode, enrolledstudents, strenrolled):
+    def __init__(self, coursename, coursecode, enrolledstudents):
         if not coursename:
             raise ValueError("The name of the course is invalid because it is empty.")
         if not coursecode or type(coursecode) is not str:
@@ -61,11 +61,11 @@ class GraduateStudent(Student):
 class UndergraduateStudent(Student):
     def __init__(self, name, degree, studentid, yearinindustry, foundation, repeater):
         super().__init__(name, degree, studentid)
-        if not yearinindustry or type(yearinindustry) is not bool:
+        if type(yearinindustry) is not bool:
             raise ValueError("The value for whether the student is doing a degree in industry is invalid.")
         self.yearinindustry = yearinindustry
-        if not foundation or type(foundation) is not bool:
+        if type(foundation) is not bool:
             raise ValueError("The value for whether the student has done a foundation year is invalid.")
         self.foundation = foundation
-        if not repeater or type(repeater) is not bool:
+        if type(repeater) is not bool:
             raise ValueError("The value for whether the student is repeating the year is invalid.")
