@@ -24,27 +24,32 @@ class Student:
         self.degree = degree
 
 class Course:
-    def __init__(self, coursename, coursecode, enrolledstudents):
+    def __init__(self, coursename, coursecode, enrolledstudents, strenrolled):
         if not coursename:
             raise ValueError("The name of the course is invalid because it is empty.")
         if not coursecode or type(coursecode) is not str:
             raise ValueError("The course code is invalid.")
         if not enrolledstudents or type(enrolledstudents) is not list:
-            raise ValueError("The ")
+            raise ValueError("The list of enrolled students input is not valid.")
         self.coursename = coursename
         self.coursecode = coursecode
         self.enrolledstudents = enrolledstudents
-    
+        self.strenrolled = self.strenrolledstudents()
     def addstudent(self, student):
         self.enrolledstudents.append(student)
     
     def removestudent(self, student):
         self.enrolledstudents.remove(student)
     
-    def printallstudents(self):
-        print("The students in this course are: ")
+    def strenrolledstudents(self):
+        string = ""
         for i in self.enrolledstudents:
-            print(i)
+            string += str(i)
+        return string
+
+
+    def __str__(self):
+        return f"The Course name is: {self.coursename} with code {self.coursecode} and the students enrolled are:\n{self.strenrolled}"
 
 class GraduateStudent(Student):
     def __init__(self, name, degree, studentid, researchtopic):
