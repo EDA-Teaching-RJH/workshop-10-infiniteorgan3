@@ -59,9 +59,9 @@ class Course:
         return f"The Course name is: {self.coursename} with code {self.coursecode} and the students enrolled are:\n{self.strenrolled}"
 
     def __add__(self, other):
-        listofall = []
+        listofall = self.enrolledstudents
         for i in other.enrolledstudents:
-            if i not in self.enrolledstudents:
+            if i not in listofall:
                 listofall.append(i)
         return Course(self.coursename, self.coursecode, listofall)
 
