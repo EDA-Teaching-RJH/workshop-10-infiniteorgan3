@@ -11,7 +11,7 @@ class Student:
         self.studentid = studentid
     
     def __str__(self):
-        return f"The student {self.studentid} is {self.name} from {self.degree}."
+        return f"{self.studentid}:{self.name} from {self.degree}."
 
     @property
     def degree(self):
