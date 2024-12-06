@@ -58,6 +58,13 @@ class Course:
     def __str__(self):
         return f"The Course name is: {self.coursename} with code {self.coursecode} and the students enrolled are:\n{self.strenrolled}"
 
+    def __add__(self, other):
+        listofall = []
+        for i in other.enrolledstudents:
+            if i not in self.enrolledstudents:
+                listofall.append(i)
+        return Course(self.coursename, self.coursecode, listofall)
+
 class GraduateStudent(Student):
     def __init__(self, name, degree, studentid, researchtopic):
         super().__init__(name, degree, studentid)
