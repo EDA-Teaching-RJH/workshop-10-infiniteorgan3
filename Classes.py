@@ -29,7 +29,7 @@ class Course:
             raise ValueError("The name of the course is invalid because it is empty.")
         if not coursecode or type(coursecode) is not str:
             raise ValueError("The course code is invalid.")
-        if not enrolledstudents or type(enrolledstudents) is not list:
+        if type(enrolledstudents) is not list:
             raise ValueError("The list of enrolled students input is not valid.")
         self.coursename = coursename
         self.coursecode = coursecode
