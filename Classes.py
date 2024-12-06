@@ -37,9 +37,11 @@ class Course:
         self.strenrolled = self.strenrolledstudents()
     def addstudent(self, student):
         self.enrolledstudents.append(student)
+        self.strenrolled = self.strenrolledstudents()
     
     def removestudent(self, student):
         self.enrolledstudents.remove(student)
+        self.strenrolled = self.strenrolledstudents()
     
     def strenrolledstudents(self):
         string = ""
