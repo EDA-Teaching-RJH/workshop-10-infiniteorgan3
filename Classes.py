@@ -36,13 +36,18 @@ class Course:
         self.enrolledstudents = enrolledstudents
         self.strenrolled = self.strenrolledstudents()
     def addstudent(self, student):
-        self.enrolledstudents.append(student)
-        self.strenrolled = self.strenrolledstudents()
+        if student not in self.enrolledstudents:
+            self.enrolledstudents.append(student)
+            self.strenrolled = self.strenrolledstudents()
+        else:
+            raise ValueError("That student is already in the list of enrolled students.")
     
     def removestudent(self, student):
-        self.enrolledstudents.remove(student)
-        self.strenrolled = self.strenrolledstudents()
-    
+        if student in self.enrolledstudents:
+            self.enrolledstudents.remove(student)
+            self.strenrolled = self.strenrolledstudents()
+        else:
+            raise ValueError("That student is not in the list of enrolled students.")
     def strenrolledstudents(self):
         string = ""
         for i in self.enrolledstudents:

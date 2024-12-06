@@ -9,12 +9,16 @@ def main():
 
     coursea.addstudent(student1)
     coursea.addstudent(student4)
-
+    coursea.addstudent(student3)
+    
     print(coursea)
 
     print(student1.degree)
 
+    print(student2.degree)
     student2.degree = "ECE"
+    print(student2.degree)
+
 
 if __name__ == "__main__":
     main()
