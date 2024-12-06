@@ -5,7 +5,7 @@ def main():
     student2 = Classes.GraduateStudent("B", "MECH", 123456, "ffffff")
     student3 = Classes.GraduateStudent("C", "BIO", 111111, "a")
     student4 = Classes.UndergraduateStudent("D", "EEE", 222222, True, True, False)
-    coursea = Classes.Course("a", "ssssss", [])
+    coursea = Classes.Course("a", "ssssss", list())
 
     coursea.addstudent(student1)
     coursea.addstudent(student4)
